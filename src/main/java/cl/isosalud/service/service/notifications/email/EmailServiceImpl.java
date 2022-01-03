@@ -86,6 +86,7 @@ public class EmailServiceImpl implements EmailService {
         try {
             MimeMessageHelper helper = new MimeMessageHelper(msg, true);
 
+            helper.setFrom("contacto@isosalud.cl");
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(body, true);
