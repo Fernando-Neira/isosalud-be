@@ -189,7 +189,7 @@ public class DocumentServiceImpl implements DocumentService {
                 .uploadHash(documentEntity.getUploadHash())
                 .collectionName(documentEntity.getCollectionName())
                 .date(documentEntity.getDate())
-                .downloadUrl(docStorageLocation.resolve(documentEntity.getHash()).toString())
+                .downloadUrl(docStorageLocation.resolve(documentEntity.getHash()).toString().replace("/uploads/", ""))
                 .build();
     }
 
