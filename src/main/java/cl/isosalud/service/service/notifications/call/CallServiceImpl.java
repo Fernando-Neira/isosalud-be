@@ -1,7 +1,6 @@
 package cl.isosalud.service.service.notifications.call;
 
 import cl.isosalud.service.context.AppContext;
-import cl.isosalud.service.dto.AppointmentDto;
 import cl.isosalud.service.dto.ConfigurationDto;
 import cl.isosalud.service.entity.ConfigIvr;
 import cl.isosalud.service.enums.MessagesEnum;
@@ -62,7 +61,7 @@ public class CallServiceImpl implements CallService {
             return false;
         }
 
-        String messagePlaceholder = configIvrRepository.findByKey("MESSAGE_"+messageEnum.name())
+        String messagePlaceholder = configIvrRepository.findByKey("MESSAGE_" + messageEnum.name())
                 .map(ConfigIvr::getValue)
                 .orElse(messageEnum.getDefaultMsg());
 
@@ -84,7 +83,7 @@ public class CallServiceImpl implements CallService {
             numberTo = numberTo.startsWith("+56") ? numberTo : "+56".concat(numberTo);
 
             Call call = Call.creator(
-                    new PhoneNumber(numberTo),
+                            new PhoneNumber(numberTo),
                             new PhoneNumber(numberFrom),
                             new URI("http://isosalud.ddns.net:8080/api-ivr/do-call-patient"))
                     .create();

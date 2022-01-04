@@ -1,12 +1,10 @@
 package cl.isosalud.service.service.location;
 
 import cl.isosalud.service.dto.LocationDto;
-import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.entity.CommuneEntity;
 import cl.isosalud.service.entity.RegionEntity;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;
-import cl.isosalud.service.repository.BoxRepository;
 import cl.isosalud.service.repository.CommuneRepository;
 import cl.isosalud.service.repository.RegionRepository;
 import lombok.RequiredArgsConstructor;

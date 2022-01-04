@@ -4,10 +4,16 @@ import cl.isosalud.service.dto.GenericResponseDto;
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.NoteDto;
 import cl.isosalud.service.dto.UserDto;
-import cl.isosalud.service.entity.*;
+import cl.isosalud.service.entity.NoteEntity;
+import cl.isosalud.service.entity.NoteStatusEntity;
+import cl.isosalud.service.entity.NoteTypeEntity;
+import cl.isosalud.service.entity.UserEntity;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;
-import cl.isosalud.service.repository.*;
+import cl.isosalud.service.repository.NoteRepository;
+import cl.isosalud.service.repository.NoteStatusEntityRepository;
+import cl.isosalud.service.repository.NoteTypeRepository;
+import cl.isosalud.service.repository.UserRepository;
 import cl.isosalud.service.util.UserUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -76,7 +82,7 @@ public class NotesServiceImpl implements NotesService {
             return GenericResponseDto.builder()
                     .message("OK")
                     .build();
-        }catch (Exception e) {
+        } catch (Exception e) {
             return GenericResponseDto.builder()
                     .message("NOK")
                     .build();

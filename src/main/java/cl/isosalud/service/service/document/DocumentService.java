@@ -10,8 +10,12 @@ import java.util.List;
 public interface DocumentService {
 
     DocumentDto getById(int productId);
+
     List<DocumentCollectionDto> upload(MultipartFile[] multipartFiles, Integer patientId, String collectionName);
+
     List<DocumentDto> getAll();
+
     List<DocumentCollectionDto> getByPatientId(Integer id);
+
     GenericResponseDto delete(Integer fileId);
 }

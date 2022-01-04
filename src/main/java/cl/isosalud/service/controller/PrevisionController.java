@@ -2,7 +2,6 @@ package cl.isosalud.service.controller;
 
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.ResponseListWrapper;
-import cl.isosalud.service.service.gender.GenderService;
 import cl.isosalud.service.service.prevision.PrevisionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

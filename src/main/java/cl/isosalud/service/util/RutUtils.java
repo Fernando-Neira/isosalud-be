@@ -29,11 +29,11 @@ public class RutUtils {
         int S = 1;
         int T = Integer.parseInt(rut);
 
-        for (;T!=0;T=(int) Math.floor(T/=10)) {
+        for (; T != 0; T = (int) Math.floor(T /= 10)) {
             S = (S + T % 10 * (9 - M++ % 6)) % 11;
         }
 
-        return ( S > 0 ) ? String.valueOf(S-1) : "k";
+        return (S > 0) ? String.valueOf(S - 1) : "k";
     }
 
 }

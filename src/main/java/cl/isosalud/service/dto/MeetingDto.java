@@ -14,7 +14,7 @@ import java.util.List;
 public class MeetingDto {
 
     private int id;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
     private String type;
     private int idDoctor;

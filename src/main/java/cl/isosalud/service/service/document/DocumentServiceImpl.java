@@ -4,7 +4,6 @@ import cl.isosalud.service.dto.DocumentCollectionDto;
 import cl.isosalud.service.dto.DocumentDto;
 import cl.isosalud.service.dto.GenericResponseDto;
 import cl.isosalud.service.dto.UserDto;
-import cl.isosalud.service.entity.CommuneEntity;
 import cl.isosalud.service.entity.DocumentEntity;
 import cl.isosalud.service.entity.UserEntity;
 import cl.isosalud.service.exception.GenericException;
@@ -106,7 +105,7 @@ public class DocumentServiceImpl implements DocumentService {
                     .message("OK")
                     .details(List.of(documentEntity.getName()))
                     .build();
-        }catch (Exception e) {
+        } catch (Exception e) {
             return GenericResponseDto.builder()
                     .message("NOK")
                     .build();

@@ -1,8 +1,6 @@
 package cl.isosalud.service.service.dentist;
 
 import cl.isosalud.service.dto.UserDto;
-import cl.isosalud.service.entity.ContactMeanEntity;
-import cl.isosalud.service.entity.PersonEntity;
 import cl.isosalud.service.entity.RoleEntity;
 import cl.isosalud.service.entity.UserEntity;
 import cl.isosalud.service.exception.GenericException;
@@ -12,7 +10,6 @@ import cl.isosalud.service.service.person.PersonServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

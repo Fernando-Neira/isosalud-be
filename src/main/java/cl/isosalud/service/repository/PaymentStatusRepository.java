@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface PaymentStatusRepository extends JpaRepository<PaymentStatusEntity, Integer> {
 
     List<PaymentStatusEntity> findAll();
+
     Optional<PaymentStatusEntity> findByName(String name);
 
 }

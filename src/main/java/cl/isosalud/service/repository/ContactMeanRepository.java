@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ContactMeanRepository extends PagingAndSortingRepository<ContactMeanEntity, Integer> {
 
     Optional<ContactMeanEntity> findByName(String name);
+
     List<ContactMeanEntity> findAll();
 
 }

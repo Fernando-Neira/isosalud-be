@@ -1,10 +1,8 @@
 package cl.isosalud.service.controller;
 
-import cl.isosalud.service.dto.AppointmentDto;
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.ProductDto;
 import cl.isosalud.service.dto.ResponseListWrapper;
-import cl.isosalud.service.service.appointment.AppointmentService;
 import cl.isosalud.service.service.inventory.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

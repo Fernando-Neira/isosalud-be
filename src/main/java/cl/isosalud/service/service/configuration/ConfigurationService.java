@@ -8,7 +8,9 @@ import java.util.Optional;
 public interface ConfigurationService {
 
     List<ConfigurationDto> getAll();
+
     Optional<ConfigurationDto> getKey(String key);
+
     ConfigurationDto setKey(ConfigurationDto configuration);
 
 }

@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface RoleRepository extends PagingAndSortingRepository<RoleEntity, Integer> {
 
     Optional<RoleEntity> findByName(String name);
+
     List<RoleEntity> findAll();
 
 }

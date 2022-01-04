@@ -42,7 +42,7 @@ public class IvrApiController {
         String to = "+56976188098";
 
         Call call = Call.creator(new PhoneNumber(to), new PhoneNumber(from),
-                new URI("http://isosalud.ddns.net:8080/api-ivr/welcome"))
+                        new URI("http://isosalud.ddns.net:8080/api-ivr/welcome"))
                 .create();
 
         return call.toString();
@@ -105,7 +105,7 @@ public class IvrApiController {
 
         VoiceResponse response = new VoiceResponse.Builder()
                 .say(new Say.Builder(
-                        "Hola de nuevo presionaste "+ Digits)
+                        "Hola de nuevo presionaste " + Digits)
                         .voice(Say.Voice.ALICE)
                         .language(Say.Language.ES_MX)
                         .build())

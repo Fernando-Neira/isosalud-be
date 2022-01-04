@@ -9,11 +9,18 @@ import java.util.List;
 public interface AppointmentService {
 
     List<AppointmentDto> getOwn();
+
     AppointmentDto getById(int appointmentId);
+
     AppointmentDto create(AppointmentDto appointment);
+
     AppointmentDto cancel(AppointmentDto appointment);
+
     List<AppointmentDto> getByRutPatient(String patientRut);
+
     AppointmentDto edit(int appointmentId, AppointmentDto appointment);
+
     List<AppointmentDto> getAll();
+
     AppointmentBoxAvaiblesDto getBoxesAvailables(LocalDateTime startDate, LocalDateTime endDate);
 }

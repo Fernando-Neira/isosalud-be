@@ -1,6 +1,8 @@
 package cl.isosalud.service.controller;
 
-import cl.isosalud.service.dto.*;
+import cl.isosalud.service.dto.EvolutionDto;
+import cl.isosalud.service.dto.GenericResponseDto;
+import cl.isosalud.service.dto.ResponseListWrapper;
 import cl.isosalud.service.service.evolutions.EvolutionsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

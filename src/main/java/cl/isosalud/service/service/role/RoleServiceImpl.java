@@ -1,6 +1,5 @@
 package cl.isosalud.service.service.role;
 
-import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.RoleDto;
 import cl.isosalud.service.entity.RoleEntity;
 import cl.isosalud.service.exception.GenericException;

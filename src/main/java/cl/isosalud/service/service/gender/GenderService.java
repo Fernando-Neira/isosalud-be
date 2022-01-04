@@ -7,6 +7,7 @@ import java.util.List;
 public interface GenderService {
 
     List<NameDescriptionObj> getAll();
+
     NameDescriptionObj getById(int boxId);
 
 }

@@ -1,14 +1,12 @@
 package cl.isosalud.service.repository;
 
 import cl.isosalud.service.entity.AppointmentEntity;
-import cl.isosalud.service.entity.PersonEntity;
 import cl.isosalud.service.entity.TreatmentEntity;
 import cl.isosalud.service.entity.UserEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -16,8 +14,11 @@ import java.util.Optional;
 public interface AppointmentRepository extends PagingAndSortingRepository<AppointmentEntity, Integer> {
 
     List<AppointmentEntity> findAll();
+
     List<AppointmentEntity> findAllByMedicUserEntity(UserEntity medicUserEntity);
+
     List<AppointmentEntity> findAllByPatientUserEntity(UserEntity patientUserEntity);
+
     List<AppointmentEntity> findAllByTreatmentEntity(TreatmentEntity treatmentEntity);
 
     @Query(

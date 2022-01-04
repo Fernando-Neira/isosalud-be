@@ -3,13 +3,11 @@ package cl.isosalud.service.controller;
 import cl.isosalud.service.dto.*;
 import cl.isosalud.service.service.appointment.AppointmentService;
 import cl.isosalud.service.service.appointment.type.AppointmentTypeService;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController

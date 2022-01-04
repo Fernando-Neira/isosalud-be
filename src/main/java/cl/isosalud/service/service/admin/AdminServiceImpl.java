@@ -1,21 +1,19 @@
 package cl.isosalud.service.service.admin;
 
 import cl.isosalud.service.dto.AdminResumeDto;
-import cl.isosalud.service.dto.NameDescriptionObj;
-import cl.isosalud.service.dto.ProductDto;
-import cl.isosalud.service.entity.*;
-import cl.isosalud.service.exception.GenericException;
-import cl.isosalud.service.mapping.Mapper;
-import cl.isosalud.service.repository.*;
+import cl.isosalud.service.entity.AppointmentEntity;
+import cl.isosalud.service.entity.TreatmentEntity;
+import cl.isosalud.service.entity.UserEntity;
+import cl.isosalud.service.repository.AppointmentRepository;
+import cl.isosalud.service.repository.TreatmentRepository;
+import cl.isosalud.service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.temporal.TemporalAmount;
 import java.util.List;
 
 @Service
@@ -49,7 +47,7 @@ public class AdminServiceImpl implements AdminService {
         int prevMonth = Integer.parseInt(String.valueOf(allUsers.stream().filter(u -> u.getDateCreated().getMonth().equals(LocalDate.now().minus(Period.ofMonths(1)).getMonth())).count()));
         int total = allUsers.size();
 
-        return new int[] {total, prevMonth, thisMonth};
+        return new int[]{total, prevMonth, thisMonth};
     }
 
     private int[][] getNewAppointmentsMonth() {
@@ -61,7 +59,7 @@ public class AdminServiceImpl implements AdminService {
         int realizadasMonth = Integer.parseInt(String.valueOf(allAppointments.stream().filter(u -> u.getAppointmentState().getName().equals("Realizada")).count()));
         int total = allAppointments.size();
 
-        return new int[][] {{total, prevMonth, thisMonth}, {canceledMonth, realizadasMonth}};
+        return new int[][]{{total, prevMonth, thisMonth}, {canceledMonth, realizadasMonth}};
     }
 
     private int[] getNewTreatmentsMonth() {
@@ -71,7 +69,7 @@ public class AdminServiceImpl implements AdminService {
         int prevMonth = Integer.parseInt(String.valueOf(allTreatments.stream().filter(u -> u.getDateCreated().getMonth().equals(LocalDate.now().minus(Period.ofMonths(1)).getMonth())).count()));
         int total = allTreatments.size();
 
-        return new int[] {total, prevMonth, thisMonth};
+        return new int[]{total, prevMonth, thisMonth};
     }
 
 }

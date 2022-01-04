@@ -1,6 +1,5 @@
 package cl.isosalud.service.controller;
 
-import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.ResponseListWrapper;
 import cl.isosalud.service.dto.RoleDto;
 import cl.isosalud.service.service.role.RoleService;

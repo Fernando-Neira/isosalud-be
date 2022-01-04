@@ -10,7 +10,9 @@ import java.util.Optional;
 public interface CommuneRepository extends PagingAndSortingRepository<CommuneEntity, Integer> {
 
     List<CommuneEntity> findAll();
+
     List<CommuneEntity> findAllByRegion(RegionEntity regionEntity);
+
     Optional<CommuneEntity> findByName(String name);
 
 }

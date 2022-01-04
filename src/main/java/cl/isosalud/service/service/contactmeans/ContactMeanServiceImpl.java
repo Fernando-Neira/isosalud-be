@@ -1,7 +1,6 @@
 package cl.isosalud.service.service.contactmeans;
 
 import cl.isosalud.service.dto.ContactMeanDto;
-import cl.isosalud.service.dto.RoleDto;
 import cl.isosalud.service.entity.ContactMeanEntity;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;

@@ -1,9 +1,9 @@
 package cl.isosalud.service.controller.advice;
 
 import cl.isosalud.service.dto.ConfigurationDto;
+import cl.isosalud.service.dto.ResponseListWrapper;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.service.configuration.ConfigurationService;
-import cl.isosalud.service.dto.ResponseListWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;

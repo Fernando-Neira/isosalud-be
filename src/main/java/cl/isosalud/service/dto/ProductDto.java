@@ -3,7 +3,6 @@ package cl.isosalud.service.dto;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor

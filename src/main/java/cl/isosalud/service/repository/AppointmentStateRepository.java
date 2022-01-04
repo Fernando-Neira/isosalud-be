@@ -1,7 +1,6 @@
 package cl.isosalud.service.repository;
 
 import cl.isosalud.service.entity.AppointmentStateEntity;
-import cl.isosalud.service.entity.PersonEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.Optional;

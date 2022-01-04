@@ -16,9 +16,9 @@ public class MeetingInfoDto {
     private int total;
     private int success;
     private int schedule;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime nextMeeting;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastMeeting;
     private List<MeetingDto> meetings;
 

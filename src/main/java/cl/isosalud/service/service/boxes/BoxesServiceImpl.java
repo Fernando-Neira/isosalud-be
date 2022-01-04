@@ -2,7 +2,7 @@ package cl.isosalud.service.service.boxes;
 
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.mapping.Mapper;
-import cl.isosalud.service.repository.*;
+import cl.isosalud.service.repository.BoxRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

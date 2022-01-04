@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.lang.reflect.InvocationTargetException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -26,18 +23,18 @@ public class Mapper {
     public <T> T map(Object source, Class<T> destinationClass) {
         T destination;
 
-         if (source == null) {
+        if (source == null) {
             return null;
         }
 
-         if (source.getClass().isAssignableFrom(Optional.class)) {
-             Optional<?> sourceOpt = (Optional<?>) source;
+        if (source.getClass().isAssignableFrom(Optional.class)) {
+            Optional<?> sourceOpt = (Optional<?>) source;
 
-             if (sourceOpt.isEmpty()) {
-                 return null;
-             }
+            if (sourceOpt.isEmpty()) {
+                return null;
+            }
 
-             source = sourceOpt.get();
+            source = sourceOpt.get();
         }
 
         if (destinationClass.isAssignableFrom(UserDto.class)) {
@@ -279,7 +276,7 @@ public class Mapper {
             description = (String) source.getClass().getMethod("getDescription").invoke(source);
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             log.error(e.getMessage());
-            throw new RuntimeException("Error al obtener campo por reflection => " +  e.getMessage());
+            throw new RuntimeException("Error al obtener campo por reflection => " + e.getMessage());
         }
 
         return NameDescriptionObj.builder()

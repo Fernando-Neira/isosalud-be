@@ -20,12 +20,12 @@ public class TreatmentDto {
     private TreatmentSpecializationDto specialization;
     private TreatmentStateDto state;
     private List<ClinicalProcessDto> processes;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateCreated;
     private String typeOdontograma;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startDate;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime lastMeeting;
     private List<AppointmentDto> appointments;
 

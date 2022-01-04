@@ -37,7 +37,7 @@ public class PublicServiceImpl implements PublicService {
                     .message("OK")
                     .details(List.of("Mensaje enviado correctamente, pronto te contactaremos!"))
                     .build();
-        }catch (Exception e) {
+        } catch (Exception e) {
             return GenericResponseDto.builder()
                     .message("NOK")
                     .details(List.of("Error al enviar correo, favor reintentar mas tarde"))

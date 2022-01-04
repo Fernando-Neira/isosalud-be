@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class EvolutionDto {
 
     private int id;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateCreated;
     private UserDto medic;
     private UserDto patient;

@@ -5,8 +5,6 @@ import cl.isosalud.service.entity.ConfigEntity;
 import cl.isosalud.service.repository.ConfigRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

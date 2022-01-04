@@ -1,10 +1,10 @@
 package cl.isosalud.service.service.notifications.sms;
 
+import cl.isosalud.service.dto.ConfigurationDto;
 import cl.isosalud.service.entity.ConfigIvr;
 import cl.isosalud.service.enums.MessagesEnum;
 import cl.isosalud.service.repository.ConfigIvrRepository;
 import cl.isosalud.service.service.configuration.ConfigurationServiceImpl;
-import cl.isosalud.service.dto.ConfigurationDto;
 import cl.isosalud.service.util.MessageParamsResolver;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -67,7 +67,7 @@ public class SmsServiceImpl implements SmsService {
             return false;
         }
 
-        String messagePlaceholder = configIvrRepository.findByKey("MESSAGE_"+messageEnum.name())
+        String messagePlaceholder = configIvrRepository.findByKey("MESSAGE_" + messageEnum.name())
                 .map(ConfigIvr::getValue)
                 .orElse(messageEnum.getDefaultMsg());
 
@@ -86,7 +86,7 @@ public class SmsServiceImpl implements SmsService {
 
             log.info("Sms send successful => {}", messageObj.getSid());
             return true;
-        }catch (Exception e) {
+        } catch (Exception e) {
             return false;
         }
     }

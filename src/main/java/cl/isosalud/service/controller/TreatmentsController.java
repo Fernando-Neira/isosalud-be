@@ -1,6 +1,9 @@
 package cl.isosalud.service.controller;
 
-import cl.isosalud.service.dto.*;
+import cl.isosalud.service.dto.ClinicalProcessTypesDto;
+import cl.isosalud.service.dto.ResponseListWrapper;
+import cl.isosalud.service.dto.TreatmentDto;
+import cl.isosalud.service.dto.TreatmentSpecializationDto;
 import cl.isosalud.service.service.treatment.TreatmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

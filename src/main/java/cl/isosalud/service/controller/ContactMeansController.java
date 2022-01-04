@@ -2,7 +2,6 @@ package cl.isosalud.service.controller;
 
 import cl.isosalud.service.dto.ContactMeanDto;
 import cl.isosalud.service.dto.ResponseListWrapper;
-import cl.isosalud.service.dto.RoleDto;
 import cl.isosalud.service.service.contactmeans.ContactMeanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

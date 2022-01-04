@@ -18,8 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.List;
 
 @Service
@@ -49,7 +47,7 @@ public class PatientServiceImpl implements PatientService {
     public UserDto save(UserDto userDto) {
         log.info("Saving new user {}", userDto);
 
-        personRepository.findByRutIgnoreCase(userDto.getPersonInfo().getRut()).orElseThrow(() ->  new UsernameNotFoundException(String.format("RUT %s, already exist.", userDto.getPersonInfo().getRut())));
+        personRepository.findByRutIgnoreCase(userDto.getPersonInfo().getRut()).orElseThrow(() -> new UsernameNotFoundException(String.format("RUT %s, already exist.", userDto.getPersonInfo().getRut())));
 
         ContactMeanEntity contactMeanOpt = contactMeanRepository.findByName(userDto.getPreferredContactMeanName()).orElseThrow(() -> new UsernameNotFoundException(String.format("ContactMean %s, doesn't exist.", userDto.getPreferredContactMeanName())));
 

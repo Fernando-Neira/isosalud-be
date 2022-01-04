@@ -1,12 +1,10 @@
 package cl.isosalud.service.controller;
 
 import cl.isosalud.service.dto.LocationDto;
-import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.ResponseListWrapper;
 import cl.isosalud.service.service.location.LocationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

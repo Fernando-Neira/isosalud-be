@@ -9,6 +9,7 @@ import java.util.List;
 public interface TreatmentRepository extends PagingAndSortingRepository<TreatmentEntity, Integer> {
 
     List<TreatmentEntity> findAll();
+
     List<TreatmentEntity> findAllByPatientUser(UserEntity userEntity);
 
 }

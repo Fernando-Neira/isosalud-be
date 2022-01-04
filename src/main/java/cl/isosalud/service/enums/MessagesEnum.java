@@ -14,7 +14,7 @@ public enum MessagesEnum {
     private final String key;
     private final String defaultMsg;
 
-    MessagesEnum(String key, String defaultMsg){
+    MessagesEnum(String key, String defaultMsg) {
         this.key = key;
         this.defaultMsg = defaultMsg;
     }

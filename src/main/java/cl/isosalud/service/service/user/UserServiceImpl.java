@@ -24,7 +24,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 
@@ -270,7 +269,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 .build();
     }
 
-    private String getUsername (UserDto userDto) {
+    private String getUsername(UserDto userDto) {
         String username = String.valueOf(userDto.getPersonInfo().getFirstName().charAt(0)).toLowerCase() + userDto.getPersonInfo().getLastName().split(" ")[0].toLowerCase();
 
         List<UserEntity> users = userRepository.findByUsernameContainingIgnoreCase(username);
@@ -292,7 +291,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             }
 
             isCorrect = true;
-        }while (!isCorrect);
+        } while (!isCorrect);
 
         return username;
     }

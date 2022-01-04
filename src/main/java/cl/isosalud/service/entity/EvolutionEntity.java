@@ -3,7 +3,6 @@ package cl.isosalud.service.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor

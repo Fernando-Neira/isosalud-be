@@ -1,6 +1,9 @@
 package cl.isosalud.service.controller;
 
-import cl.isosalud.service.dto.*;
+import cl.isosalud.service.dto.DocumentCollectionDto;
+import cl.isosalud.service.dto.DocumentDto;
+import cl.isosalud.service.dto.GenericResponseDto;
+import cl.isosalud.service.dto.ResponseListWrapper;
 import cl.isosalud.service.service.document.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

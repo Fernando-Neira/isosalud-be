@@ -7,9 +7,6 @@ import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;
 import cl.isosalud.service.repository.*;
 import cl.isosalud.service.service.notifications.NotificationService;
-import cl.isosalud.service.service.notifications.call.CallService;
-import cl.isosalud.service.service.notifications.email.EmailService;
-import cl.isosalud.service.service.notifications.sms.SmsService;
 import cl.isosalud.service.util.UserUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -124,7 +121,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
             try {
                 sendNotificationAppointmentCreated(newAppointmnet);
-            }catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 log.error("Error al enviar notificacion...");
             }

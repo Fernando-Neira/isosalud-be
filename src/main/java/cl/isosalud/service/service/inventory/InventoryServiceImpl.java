@@ -2,10 +2,12 @@ package cl.isosalud.service.service.inventory;
 
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.ProductDto;
-import cl.isosalud.service.entity.*;
+import cl.isosalud.service.entity.ProductEntity;
+import cl.isosalud.service.entity.ProductTypeEntity;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;
-import cl.isosalud.service.repository.*;
+import cl.isosalud.service.repository.ProductRepository;
+import cl.isosalud.service.repository.ProductTypeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -93,7 +95,7 @@ public class InventoryServiceImpl implements InventoryService {
 
         if (action.equals("plus")) {
             productEntity.setQuantity(productEntity.getQuantity() + (ammount != null ? ammount : 1));
-        }else {
+        } else {
             productEntity.setQuantity(productEntity.getQuantity() - (ammount != null ? ammount : 1));
         }
 

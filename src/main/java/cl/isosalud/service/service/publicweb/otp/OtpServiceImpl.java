@@ -1,10 +1,10 @@
 package cl.isosalud.service.service.publicweb.otp;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import com.google.common.cache.LoadingCache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,9 +42,9 @@ public class OtpServiceImpl implements OtpService {
 
     @Override
     public Optional<Integer> getOtp(String key) {
-        try{
+        try {
             return Optional.ofNullable(otpCache.get(key));
-        }catch (Exception e){
+        } catch (Exception e) {
             return Optional.empty();
         }
     }
@@ -54,7 +54,7 @@ public class OtpServiceImpl implements OtpService {
         try {
             otpCache.invalidate(key);
             return true;
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
