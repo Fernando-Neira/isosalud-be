@@ -32,7 +32,7 @@ public class PublicServiceImpl implements PublicService {
             params.put("<comentario>", payload.getComentario());
 
 
-            emailService.send(MessagesEnum.PUBLIC_WEB_CONTACT, "clinicaisosalud@gmail.com", params);
+            emailService.send(MessagesEnum.PUBLIC_WEB_CONTACT, "fe.neiraj@gmail.com", params);
             return GenericResponseDto.builder()
                     .message("OK")
                     .details(List.of("Mensaje enviado correctamente, pronto te contactaremos!"))
