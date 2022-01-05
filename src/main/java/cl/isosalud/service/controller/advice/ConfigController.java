@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/config")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class ConfigController {
 
     private final ConfigurationService configurationService;

@@ -85,7 +85,7 @@ public class CallServiceImpl implements CallService {
             Call call = Call.creator(
                             new PhoneNumber(numberTo),
                             new PhoneNumber(numberFrom),
-                            new URI("http://isosalud.ddns.net:8080/api-ivr/do-call-patient"))
+                            new URI("http://api.isosalud.cl/api-ivr/do-call-patient"))
                     .create();
 
             AppContext.putKey(call.getSid(), message);

@@ -42,7 +42,7 @@ public class IvrApiController {
         String to = "+56976188098";
 
         Call call = Call.creator(new PhoneNumber(to), new PhoneNumber(from),
-                        new URI("http://isosalud.ddns.net:8080/api-ivr/welcome"))
+                        new URI("http://api.isosalud.cl/api-ivr/welcome"))
                 .create();
 
         return call.toString();
