@@ -29,5 +29,7 @@ public class UserDto {
     private String status;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime nextMeeting;
+    private int meetingsCompletedQuantity;
+    private int nextMeetingsQuantity;
 
 }

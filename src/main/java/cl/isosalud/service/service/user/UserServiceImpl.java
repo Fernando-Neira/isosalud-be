@@ -1,9 +1,6 @@
 package cl.isosalud.service.service.user;
 
-import cl.isosalud.service.dto.NameDescriptionObj;
-import cl.isosalud.service.dto.PrevalidateUserDto;
-import cl.isosalud.service.dto.RutValidationDto;
-import cl.isosalud.service.dto.UserDto;
+import cl.isosalud.service.dto.*;
 import cl.isosalud.service.entity.*;
 import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.mapping.Mapper;
@@ -184,6 +181,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 .stream()
                 .map(state -> mapper.map(state, NameDescriptionObj.class))
                 .toList();
+    }
+
+    @Override
+    public UserDto changePassword(ChangePasswordDto request) {
+        String username = UserUtils.getUsernameLogged();
+
+        UserEntity userEntity = userRepository.findByUsernameIgnoreCase(username)
+                .orElseThrow(() -> new GenericException(HttpStatus.NOT_FOUND, String.format("User %s not found", username), String.format("User %s not found", username)));
+
+        userEntity.setPassword(passwordEncoder.encode(request.getPassword()));
+
+        return mapper.map(userEntity, UserDto.class);
     }
 
     @Override

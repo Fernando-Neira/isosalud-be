@@ -1,5 +1,6 @@
 package cl.isosalud.service.controller;
 
+import cl.isosalud.service.dto.ChangePasswordDto;
 import cl.isosalud.service.dto.UserDto;
 import cl.isosalud.service.service.user.UserService;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +24,13 @@ public class AuthController {
     @PreAuthorize("isAuthenticated()")
     @GetMapping(path = "/me")
     public UserDto getMeInfo() {
-
         return userService.getUserLogged();
+    }
+
+    @PreAuthorize("isAuthenticated()")
+    @PostMapping(path = "/change-password")
+    public UserDto changePassword(@RequestBody ChangePasswordDto request) {
+        return userService.changePassword(request);
     }
 
 }

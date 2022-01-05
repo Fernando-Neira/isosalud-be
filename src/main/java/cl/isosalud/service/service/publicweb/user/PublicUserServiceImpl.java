@@ -5,6 +5,7 @@ import cl.isosalud.service.dto.SuccessfulAuthenticationResponseDto;
 import cl.isosalud.service.entity.PersonEntity;
 import cl.isosalud.service.entity.UserEntity;
 import cl.isosalud.service.enums.MessagesEnum;
+import cl.isosalud.service.exception.GenericException;
 import cl.isosalud.service.repository.PersonRepository;
 import cl.isosalud.service.repository.UserRepository;
 import cl.isosalud.service.service.notifications.NotificationService;
@@ -13,6 +14,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -81,7 +83,7 @@ public class PublicUserServiceImpl implements PublicUserService {
         Optional<Integer> otpSaved = otpService.getOtp(rut);
 
         if (otpSaved.isEmpty() || otpSaved.get() != otp) {
-            throw new UsernameNotFoundException("Código de acceso invalido");
+            throw new GenericException(HttpStatus.UNAUTHORIZED, "Código de acceso invalido", "Código de acceso invalido");
         }
 
         PersonEntity personEntity = personRepository.findByRutIgnoreCase(rut.replace(".", "")).get();

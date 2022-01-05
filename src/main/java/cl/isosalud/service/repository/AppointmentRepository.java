@@ -33,4 +33,10 @@ public interface AppointmentRepository extends PagingAndSortingRepository<Appoin
     )
     List<AppointmentEntity> findAllAppointmentsInHour(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
 
+    @Query(
+            nativeQuery = true,
+            value = "SELECT COUNT(*) as quantity from appointments a WHERE a.patient_user_id = :userId AND appointment_state_id = :stateId"
+    )
+    int getQuantityCompleted(@Param("userId") int userId, @Param("stateId") int stateId);
+
 }

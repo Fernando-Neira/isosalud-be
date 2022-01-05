@@ -76,6 +76,15 @@ public class PatientServiceImpl implements PatientService {
                 .findLastAppointment(userDto.getId())
                 .ifPresent(appointmentEntity -> userDto.setNextMeeting(appointmentEntity.getDateStart()));
 
+        int appointmentsCompleted = appointmentRepository
+                .getQuantityCompleted(userDto.getId(), 2);
+
+        int appointmentsRecords = appointmentRepository
+                .getQuantityCompleted(userDto.getId(), 1);
+
+        userDto.setMeetingsCompletedQuantity(appointmentsCompleted);
+        userDto.setNextMeetingsQuantity(appointmentsRecords);
+
         return userDto;
     }
 

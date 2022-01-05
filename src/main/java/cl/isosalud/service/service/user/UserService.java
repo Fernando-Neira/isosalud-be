@@ -1,5 +1,6 @@
 package cl.isosalud.service.service.user;
 
+import cl.isosalud.service.dto.ChangePasswordDto;
 import cl.isosalud.service.dto.NameDescriptionObj;
 import cl.isosalud.service.dto.PrevalidateUserDto;
 import cl.isosalud.service.dto.UserDto;
@@ -25,4 +26,5 @@ public interface UserService {
 
     List<NameDescriptionObj> getUserStates();
 
+    UserDto changePassword(ChangePasswordDto request);
 }
